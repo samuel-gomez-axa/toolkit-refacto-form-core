@@ -1,0 +1,14 @@
+nav {
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  border-bottom: 1px solid blue;
+  a{
+    text-decoration: underline;
+    &.active{
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
+}
+
