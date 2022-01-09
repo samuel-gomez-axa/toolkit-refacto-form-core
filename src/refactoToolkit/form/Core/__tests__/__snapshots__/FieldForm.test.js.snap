@@ -1,0 +1,202 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render <FieldForm/> Should render custom JSX children and display error message with type.Clone and forceDisplayMessage is true 1`] = `
+<DocumentFragment>
+  <div
+    class="md-10"
+  >
+    <p>
+      Mon message : message erreur
+    </p>
+    <small
+      class="af-form__message af-form__message--error"
+    >
+      <span
+        class="glyphicon glyphicon-exclamation-sign"
+      />
+      <span
+        class="af-form__error-text"
+      >
+        message erreur
+      </span>
+    </small>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Render <FieldForm/> Should render custom JSX children with type.Clone and forceDisplayMessage is false 1`] = `
+<DocumentFragment>
+  <div
+    class="md-10"
+  >
+    <p>
+      Mon message : 
+    </p>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Render <FieldForm/> Should render empty children 1`] = `
+<DocumentFragment>
+  <div
+    class="md-10"
+  />
+</DocumentFragment>
+`;
+
+exports[`Render <FieldForm/> Should render no JSX children 1`] = `
+<DocumentFragment>
+  <div
+    class="md-10"
+  >
+    testtest
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Render <FieldForm/> Should render simple JSX children without type.Clone 1`] = `
+<DocumentFragment>
+  <div
+    class="md-10"
+  >
+    <p>
+      Simple JSX
+    </p>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Render <FieldForm/> with <CustomWithClone /> Should render with message error displayed when forceDisplayMessage true 1`] = `
+<DocumentFragment>
+  <div
+    class="md-10"
+  >
+    <p>
+      Mon message : message erreur
+    </p>
+    <small
+      class="af-form__message af-form__message--error"
+    >
+      <span
+        class="glyphicon glyphicon-exclamation-sign"
+      />
+      <span
+        class="af-form__error-text"
+      >
+        message erreur
+      </span>
+    </small>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Render <FieldForm/> with <FieldInput /> Should render with display error message when forceDisplayMessage true 1`] = `
+<DocumentFragment>
+  <div
+    class="md-10"
+  >
+    <div
+      class="sam sam--error"
+    >
+      <p>
+        Mon message : message erreur
+      </p>
+    </div>
+    <small
+      class="af-form__message af-form__message--error"
+    >
+      <span
+        class="glyphicon glyphicon-exclamation-sign"
+      />
+      <span
+        class="af-form__error-text"
+      >
+        message erreur
+      </span>
+    </small>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Render <FieldForm/> with <FieldInput /> Should render with message displayed when forceDisplayMessage true 1`] = `
+<DocumentFragment>
+  <div
+    class="md-10"
+  >
+    <div
+      class="sam sam--success"
+    >
+      <p>
+        Mon message : bravo
+      </p>
+    </div>
+    <small
+      class="af-form__message af-form__message--error"
+    >
+      <span
+        class="glyphicon glyphicon-exclamation-sign"
+      />
+      <span
+        class="af-form__error-text"
+      >
+        bravo
+      </span>
+    </small>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Render <FieldForm/> with <MyField /> Should render with FieldInput and FieldError displayed and HelpMessage hidden when forceDisplayMessage true  1`] = `
+<DocumentFragment>
+  <div
+    class="md-10"
+  >
+    <div
+      class="sam sam--error"
+    >
+      <input
+        aria-label="input-name"
+        id="name"
+        name="name"
+        type="text"
+      />
+    </div>
+    <small
+      class="af-form__message af-form__message--error"
+    >
+      <span
+        class="glyphicon glyphicon-exclamation-sign"
+      />
+      <span
+        class="af-form__error-text"
+      >
+        message erreur
+      </span>
+    </small>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Render <FieldForm/> with <MyField /> Should render with FieldInput and HelpMessage displayed and FieldError hidden when message is null 1`] = `
+<DocumentFragment>
+  <div
+    class="md-10"
+  >
+    <div
+      class="sam"
+    >
+      <input
+        aria-label="input-name"
+        id="name"
+        name="name"
+        type="text"
+      />
+    </div>
+    <small
+      class="af-form__help"
+    >
+      un peu d'aide ?
+    </small>
+  </div>
+</DocumentFragment>
+`;

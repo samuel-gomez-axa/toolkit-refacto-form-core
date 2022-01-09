@@ -11,8 +11,8 @@ const TextInputPage = () => {
     hasErrors: true,
     classModifier: "disabled",
     fields: {
-      [TEXT_INPUT]: { value: "", message: ERROR_MESSAGE }
-    }
+      [TEXT_INPUT]: { value: "", message: ERROR_MESSAGE },
+    },
   });
 
   const handleChange = ({ value, name }) => {
@@ -27,9 +27,9 @@ const TextInputPage = () => {
         [name]: {
           ...prevState.fields[name],
           value,
-          message
-        }
-      }
+          message,
+        },
+      },
     }));
   };
 
@@ -44,6 +44,7 @@ const TextInputPage = () => {
           onChange={handleChange}
           classModifier="required"
           {...stateInputText.fields[TEXT_INPUT]}
+          helpMessage="Want help ?"
         />
         <Button
           classModifier={stateInputText.classModifier}

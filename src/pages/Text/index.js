@@ -4,10 +4,11 @@ import Title from "@axa-fr/react-toolkit-title";
 import {
   FieldInput,
   FieldForm,
-  FieldError
+  FieldError,
 } from "@axa-fr/react-toolkit-form-core";
 import { Text } from "@axa-fr/react-toolkit-form-input-text";
 import "./Text.scss";
+import HelpMessage from "@axa-fr/react-toolkit-form-core/dist/HelpMessage";
 
 const ERROR_MESSAGE = "champ obligatoire";
 const TEXT = "text";
@@ -18,8 +19,8 @@ const TextPage = () => {
     hasSubmit: false,
     classModifier: "disabled",
     fields: {
-      [TEXT]: { value: "", message: ERROR_MESSAGE }
-    }
+      [TEXT]: { value: "", message: ERROR_MESSAGE },
+    },
   });
 
   const handleChange = ({ value, name }) => {
@@ -34,9 +35,9 @@ const TextPage = () => {
         [name]: {
           ...prevState.fields[name],
           value,
-          message
-        }
-      }
+          message,
+        },
+      },
     }));
   };
 
@@ -63,6 +64,7 @@ const TextPage = () => {
                 value={stateText.fields[TEXT].value}
               />
             </FieldInput>
+            <HelpMessage message="Besoin d'aide ?" />
             <FieldError
               message={stateText.fields[TEXT].message}
               messageType="error"

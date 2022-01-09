@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 const propTypes = {
   message: PropTypes.string,
@@ -24,6 +24,7 @@ HelpMessage.defaultProps = defaultProps;
 
 HelpMessage.Clone = (data) => {
   const { props, message, child } = data;
+
   return React.cloneElement(child, {
     ...props,
     isVisible: !message,

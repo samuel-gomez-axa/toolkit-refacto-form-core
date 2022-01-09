@@ -5,7 +5,8 @@
   "main": "index.html",
   "scripts": {
     "start": "parcel index.html --open",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html",
+    "test": "jest --no-cache --config ./jest.config.json"
   },
   "dependencies": {
     "@axa-fr/react-toolkit-button": "1.4.1",
@@ -13,12 +14,21 @@
     "@axa-fr/react-toolkit-form-core": "1.4.1",
     "@axa-fr/react-toolkit-form-input-text": "1.4.1",
     "@axa-fr/react-toolkit-title": "1.4.1",
+    "@babel/preset-env": "^7.16.7",
+    "@babel/preset-react": "^7.16.7",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "babel-jest": "^27.4.6",
+    "jest": "^27.4.7",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-router-dom": "6.2.1"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.6.1"
+    "eslint": "^8.6.0",
+    "eslint-config-react-app": "^7.0.0",
+    "parcel-bundler": "^1.6.1",
+    "sass": "^1.46.0"
   },
   "keywords": []
 }

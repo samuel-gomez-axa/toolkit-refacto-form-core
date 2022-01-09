@@ -4,10 +4,11 @@ import Title from "@axa-fr/react-toolkit-title";
 import {
   FieldInput,
   FieldForm,
-  FieldError
-} from "@axa-fr/react-toolkit-form-core";
-import { Text } from "@axa-fr/react-toolkit-form-input-text";
-import "./Text.scss";
+  FieldError,
+  HelpMessage,
+} from "../../refactoToolkit/form/Core";
+import { Text } from "../../refactoToolkit/form/Text";
+import "../Text/Text.scss";
 
 const ERROR_MESSAGE = "champ obligatoire";
 const TEXT = "text-custom";
@@ -18,8 +19,8 @@ const TextRefactoPage = () => {
     hasSubmit: false,
     classModifier: "disabled",
     fields: {
-      [TEXT]: { value: "", message: ERROR_MESSAGE }
-    }
+      [TEXT]: { value: "", message: ERROR_MESSAGE },
+    },
   });
 
   const handleChange = ({ value, name }) => {
@@ -34,16 +35,30 @@ const TextRefactoPage = () => {
         [name]: {
           ...prevState.fields[name],
           value,
-          message
-        }
-      }
+          message,
+        },
+      },
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setStateText((prevState) => ({
+      ...prevState,
+      hasSubmit: true,
     }));
   };
 
   return (
     <Fragment>
-      <Title>Version de Text 1.4.1</Title>
-      <form className="af-form" id="form" name="form" autoComplete="off">
+      <Title>Version de Text avec FieldForm Refacto</Title>
+      <form
+        onSubmit={handleSubmit}
+        className="af-form"
+        id="form"
+        name="form"
+        autoComplete="off"
+      >
         <FieldForm
           className="row af-form__group af-form__group--required"
           message={stateText.fields[TEXT].message}
@@ -63,6 +78,7 @@ const TextRefactoPage = () => {
                 value={stateText.fields[TEXT].value}
               />
             </FieldInput>
+            <HelpMessage message="Besoin d'aide ?" />
             <FieldError
               message={stateText.fields[TEXT].message}
               messageType="error"
@@ -70,12 +86,7 @@ const TextRefactoPage = () => {
           </div>
         </FieldForm>
 
-        <Button
-          classModifier={stateText.classModifier}
-          disabled={stateText.hasErrors}
-        >
-          Submit
-        </Button>
+        <Button>Submit</Button>
       </form>
     </Fragment>
   );
