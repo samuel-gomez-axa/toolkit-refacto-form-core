@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { render, within } from "@testing-library/react";
 import FieldForm, { renderedChildren, getInfo } from "../FieldForm";
 import FieldError from "../FieldError";
@@ -168,12 +168,12 @@ describe("Render <FieldForm/> with <MyField />", () => {
     renderFieldForm({
       customProps,
       children: (
-        <>
+        <Fragment>
           <FieldInput className="sam">
             <MyField />
           </FieldInput>
           <HelpMessage message="un peu d'aide ?" />
-        </>
+        </Fragment>
       ),
     });
 

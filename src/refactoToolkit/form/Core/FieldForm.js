@@ -1,18 +1,11 @@
-import React, {
-  Component,
-  useCallback,
-  useState,
-  useRef,
-  useEffect,
-} from "react";
+import React, { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
-
 import { ClassManager } from "@axa-fr/react-toolkit-core";
 import MessageTypes from "./MessageTypes";
 
 const defaultClassName = "md-10";
 
-const INITITAL_STATE = {
+const INITIAL_STATE = {
   hasLostFocusOnce: false,
   hasFocus: false,
   hasChange: false,
@@ -28,7 +21,7 @@ export const FieldForm = (props) => {
     classModifier,
     forceDisplayMessage,
   } = props;
-  const [state, setState] = useState(INITITAL_STATE);
+  const [state, setState] = useState(INITIAL_STATE);
   const { hasChange } = state;
 
   const previousForceDisplayMessage = useRef(forceDisplayMessage);
@@ -116,15 +109,12 @@ export const getInfo = ({
       messageType: "",
     };
   }
-  if (hasFocus) {
-    return {
-      ...memory,
-    };
-  }
-  return {
-    message,
-    messageType,
-  };
+  return hasFocus
+    ? memory
+    : {
+        message,
+        messageType,
+      };
 };
 
 export const renderedChildren = ({ children, wrapper, message, messageType }) =>
@@ -154,18 +144,15 @@ export const renderedChildren = ({ children, wrapper, message, messageType }) =>
           }
         }
 
-        if (child.type.Clone) {
-          const data = {
-            props,
-            messageType,
-            message,
-            child,
-            wrapper,
-          };
-          return child.type.Clone(data);
-        }
-
-        return React.cloneElement(child, props);
+        return child.type.Clone
+          ? child.type.Clone({
+              props,
+              messageType,
+              message,
+              child,
+              wrapper,
+            })
+          : React.cloneElement(child, props);
       });
 
 export default FieldForm;
