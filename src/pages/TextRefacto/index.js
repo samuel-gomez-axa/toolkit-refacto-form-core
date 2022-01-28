@@ -4,6 +4,7 @@ import Title from "@axa-fr/react-toolkit-title";
 import {
   FieldInput,
   FieldForm,
+  FieldForm2,
   FieldError,
   HelpMessage,
 } from "../../refactoToolkit/form/Core";
@@ -11,6 +12,7 @@ import { Text } from "../../refactoToolkit/form/Text";
 import "../Text/Text.scss";
 
 const ERROR_MESSAGE = "champ obligatoire";
+const ERROR_FORMAT = "Format error";
 const TEXT = "text-custom";
 
 const TextRefactoPage = () => {
@@ -24,8 +26,11 @@ const TextRefactoPage = () => {
   });
 
   const handleChange = ({ value, name }) => {
-    const message = value !== "" ? "" : ERROR_MESSAGE;
-    const classModifier = value !== "" ? "" : "disabled";
+    const isFormatError = value !== "5" ? "" : ERROR_FORMAT;
+    const isEmpty = value !== "" ? "" : ERROR_MESSAGE;
+    const message = isEmpty || isFormatError;
+    console.log(message, !!message);
+    const classModifier = !!message ? "disabled" : "";
     setStateText((prevState) => ({
       ...prevState,
       hasErrors: !!message,
@@ -59,7 +64,7 @@ const TextRefactoPage = () => {
         name="form"
         autoComplete="off"
       >
-        <FieldForm
+        <FieldForm2
           className="row af-form__group af-form__group--required"
           message={stateText.fields[TEXT].message}
           messageType="error"
@@ -84,9 +89,14 @@ const TextRefactoPage = () => {
               messageType="error"
             />
           </div>
-        </FieldForm>
+        </FieldForm2>
 
-        <Button>Submit</Button>
+        <Button
+          classModifier={stateText.classModifier}
+          disabled={stateText.hasErrors}
+        >
+          Submit
+        </Button>
       </form>
     </Fragment>
   );

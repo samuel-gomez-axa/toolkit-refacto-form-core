@@ -1,9 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import { Input, withInput, omit } from '@axa-fr/react-toolkit-form-core';
+import { Input, withInput, omit } from "@axa-fr/react-toolkit-form-core";
+import { CLONES } from "../Core/FieldForm2";
 
-const omitProperties = omit(['classModifier', 'className', 'isVisible']);
+const omitProperties = omit(["classModifier", "className", "isVisible"]);
 
 const Text = (props) => {
   const {
@@ -40,23 +41,23 @@ const Text = (props) => {
   );
 };
 
-const defaultClassName = 'af-form__input-text';
+const defaultClassName = "af-form__input-text";
 const propTypes = {
   value: PropTypes.string,
 };
 const defaultProps = {
-  value: '',
+  value: "",
   className: defaultClassName,
 };
 
 const EnhancedComponent = withInput(
   defaultClassName,
   propTypes,
-  defaultProps
+  defaultProps,
 )(Text);
 
-EnhancedComponent.Clone = Input.Clone;
-EnhancedComponent.ContainerClassName = 'af-form__text';
+EnhancedComponent.Clone = CLONES.CLONE_INPUT;
+EnhancedComponent.ContainerClassName = "af-form__text";
 EnhancedComponent.displayName = Text.name;
 
 export default EnhancedComponent;

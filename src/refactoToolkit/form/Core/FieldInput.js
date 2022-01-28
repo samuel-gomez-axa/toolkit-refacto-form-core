@@ -1,9 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import { ClassManager } from '@axa-fr/react-toolkit-core';
-import MessageTypes from './MessageTypes';
-import FormClassManager from './FormClassManager';
+import { ClassManager } from "@axa-fr/react-toolkit-core";
+import MessageTypes from "./MessageTypes";
+import FormClassManager from "./FormClassManager";
+import { CLONES } from "./FieldForm2";
 
 const propTypes = {
   children: PropTypes.node.isRequired,
@@ -20,7 +21,7 @@ const propTypes = {
   classModifier: PropTypes.string,
 };
 
-const defaultClassName = '';
+const defaultClassName = "";
 const defaultProps = {
   helpMessage: null,
   childrenRight: null,
@@ -28,20 +29,7 @@ const defaultProps = {
   messageType: MessageTypes.error,
   isVisible: true,
   className: defaultClassName,
-  classModifier: '',
-};
-
-const Clone = (data) => {
-  const { messageType, message, child, props } = data;
-  const classModifier = FormClassManager.getMessageClassModifier(
-    messageType,
-    message,
-    props.classModifier
-  );
-  return React.cloneElement(child, {
-    ...props,
-    classModifier,
-  });
+  classModifier: "",
 };
 
 const FieldInput = (props) => {
@@ -52,12 +40,12 @@ const FieldInput = (props) => {
   const newClassName = ClassManager.getComponentClassName(
     className,
     classModifier,
-    defaultClassName
+    defaultClassName,
   );
   return <div className={newClassName}>{children}</div>;
 };
 
 FieldInput.propTypes = propTypes;
 FieldInput.defaultProps = defaultProps;
-FieldInput.Clone = Clone;
+FieldInput.Clone = CLONES.CLONE_FIELD_INPUT;
 export default FieldInput;

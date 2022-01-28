@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { CLONES } from "./FieldForm2";
 
 const propTypes = {
   message: PropTypes.string,
@@ -11,8 +12,7 @@ const defaultProps = {
   isVisible: true,
 };
 
-const HelpMessage = (props) => {
-  const { message, isVisible } = props;
+const HelpMessage = ({ message, isVisible }) => {
   if (isVisible) {
     return <small className="af-form__help">{message}</small>;
   }
@@ -21,14 +21,6 @@ const HelpMessage = (props) => {
 
 HelpMessage.propTypes = propTypes;
 HelpMessage.defaultProps = defaultProps;
-
-HelpMessage.Clone = (data) => {
-  const { props, message, child } = data;
-
-  return React.cloneElement(child, {
-    ...props,
-    isVisible: !message,
-  });
-};
+HelpMessage.Clone = CLONES.CLONE_HELP_MESSAGE;
 
 export default HelpMessage;
