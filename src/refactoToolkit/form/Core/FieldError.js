@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import { ClassManager } from "@axa-fr/react-toolkit-core";
 import MessageTypes from "./MessageTypes";
-import { CLONES } from "./FieldForm2";
 
 const propTypes = {
   message: PropTypes.string,
@@ -39,6 +38,5 @@ const FieldError = ({ message, messageType }) => {
 
 FieldError.propTypes = propTypes;
 FieldError.defaultProps = defaultProps;
-FieldError.Clone = CLONES.CLONE_FIELD_ERROR;
 
 export default FieldError;

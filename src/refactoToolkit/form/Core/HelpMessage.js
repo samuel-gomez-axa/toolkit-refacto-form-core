@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { CLONES } from "./FieldForm2";
 
 const propTypes = {
   message: PropTypes.string,
@@ -21,6 +20,5 @@ const HelpMessage = ({ message, isVisible }) => {
 
 HelpMessage.propTypes = propTypes;
 HelpMessage.defaultProps = defaultProps;
-HelpMessage.Clone = CLONES.CLONE_HELP_MESSAGE;
 
 export default HelpMessage;

@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Input, withInput, omit } from "@axa-fr/react-toolkit-form-core";
-import { CLONES } from "../Core/FieldForm2";
+import { withInput, omit } from "../Core/withInput";
 
 const omitProperties = omit(["classModifier", "className", "isVisible"]);
 
@@ -56,7 +55,6 @@ const EnhancedComponent = withInput(
   defaultProps,
 )(Text);
 
-EnhancedComponent.Clone = CLONES.CLONE_INPUT;
 EnhancedComponent.ContainerClassName = "af-form__text";
 EnhancedComponent.displayName = Text.name;
 

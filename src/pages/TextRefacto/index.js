@@ -4,7 +4,6 @@ import Title from "@axa-fr/react-toolkit-title";
 import {
   FieldInput,
   FieldForm,
-  FieldForm2,
   FieldError,
   HelpMessage,
 } from "../../refactoToolkit/form/Core";
@@ -29,7 +28,7 @@ const TextRefactoPage = () => {
     const isFormatError = value !== "5" ? "" : ERROR_FORMAT;
     const isEmpty = value !== "" ? "" : ERROR_MESSAGE;
     const message = isEmpty || isFormatError;
-    console.log(message, !!message);
+
     const classModifier = !!message ? "disabled" : "";
     setStateText((prevState) => ({
       ...prevState,
@@ -64,7 +63,7 @@ const TextRefactoPage = () => {
         name="form"
         autoComplete="off"
       >
-        <FieldForm2
+        <FieldForm
           className="row af-form__group af-form__group--required"
           message={stateText.fields[TEXT].message}
           messageType="error"
@@ -89,7 +88,7 @@ const TextRefactoPage = () => {
               messageType="error"
             />
           </div>
-        </FieldForm2>
+        </FieldForm>
 
         <Button
           classModifier={stateText.classModifier}

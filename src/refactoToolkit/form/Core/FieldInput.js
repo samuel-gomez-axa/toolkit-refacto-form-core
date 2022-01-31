@@ -1,10 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-
 import { ClassManager } from "@axa-fr/react-toolkit-core";
 import MessageTypes from "./MessageTypes";
-import FormClassManager from "./FormClassManager";
-import { CLONES } from "./FieldForm2";
 
 const propTypes = {
   children: PropTypes.node.isRequired,
@@ -47,5 +44,5 @@ const FieldInput = (props) => {
 
 FieldInput.propTypes = propTypes;
 FieldInput.defaultProps = defaultProps;
-FieldInput.Clone = CLONES.CLONE_FIELD_INPUT;
+
 export default FieldInput;

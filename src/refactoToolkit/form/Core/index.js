@@ -3,7 +3,6 @@ export { default as FieldConstants } from "./FieldConstants";
 export { default as Field } from "./Field";
 export { default as FieldInput } from "./FieldInput";
 export { default as FieldForm } from "./FieldForm";
-export { default as FieldForm2 } from "./FieldForm2";
 export { default as HelpMessage } from "./HelpMessage";
 export { default as MessageTypes } from "./MessageTypes";
 export { default as FieldError } from "./FieldError";
